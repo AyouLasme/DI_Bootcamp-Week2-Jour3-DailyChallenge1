@@ -18,14 +18,15 @@ let chaine4 = numbers.join("");
 console.log(chaine4)
 
 // Triez le numberstableau dans l'ordre décroissant, faites-le en utilisant des boucles for
-// const numbers = [5,0,9,1,7,4,2,6,3,8];
 for (let i = 0; i < numbers.length; i++) {
-    const element = numbers[i];
-    for (let j = i; j < numbers.length; j++) {
-        if (j > i) {
-            const element1 = numbers[j]
-            element = element1
+    for (let j = 0; j < numbers.length - 1 - i; j++) {
+      // compare les éléments adjacents
+        if (numbers[j] < numbers[j + 1]) {
+            // échange les valeurs en utilisant une variable temporaire
+            let temp = numbers[j];
+            numbers[j] = numbers[j + 1];
+            numbers[j + 1] = temp;
         }
-    }    
+    }
 }
-console.log(numbers)
+console.log(numbers);
